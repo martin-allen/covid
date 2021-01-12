@@ -1,0 +1,33 @@
+{
+    "url": "https://app.powerbi.com/view?r=eyJrIjoiMzE5MzJlOTItOWE2ZS00MDNlLTlkNDEtMTcyYTg5OGFhMTFiIiwidCI6ImRjNTYxMjk1LTdjYTktNDFhOS04M2JmLTUwODM0ZDZhOWQwZiJ9",
+    "link": "/html/body/div/section[2]/div/div/div[1]/div/p[2]/a",
+    "parent": "/html/body/div[1]/root/div/div/div[1]/div/div/div/exploration-container/exploration-container-modern/div/div/div/exploration-host/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat",
+    "parent_css": "#pvExplorationHost > div > div > exploration > div > explore-canvas-modern > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.actualSizeAlignLeft.actualSizeAlignTop.actualSizeOrigin > div.visualContainerHost > visual-container-repeat",
+
+    "general": {
+        "total": ".//visual-container-modern[37]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
+        "new_cases": ".//visual-container-modern[36]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
+        "new_deaths": ".//visual-container-modern[33]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
+        "total_deaths": ".//visual-container-modern[34]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
+        "total_recovered": ".//visual-container-modern[35]/transform/div/div[3]/div/visual-modern/div/div/div/p/span"
+    },
+
+    "student": {
+        "parent": ".//visual-container-modern[5]/transform/div/div[3]/div/visual-modern/div",
+        "under_20": ".//svg/svg/g[1]/g[2]/svg/g[2]/rect[1]",
+        "over_20": ".//visual-container-modern[5]/transform/div/div[3]/div/visual-modern/div/svg/svg/g[1]/g[2]/svg/g[2]/rect[2]"
+    },
+
+    "hospital": {
+        "parent": ".//visual-container-modern[24]/transform/div/div[3]/div/visual-modern/div",
+        "not_hospital": "/html/body/div[1]/ui-view/div/div[1]/div/div/div/div/exploration-container/exploration-container-modern/div/div/div/exploration-host/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[24]/transform/div/div[3]/div/visual-modern/div/svg/svg/g[3]/text[1]",
+        "hospital": "/html/body/div[1]/ui-view/div/div[1]/div/div/div/div/exploration-container/exploration-container-modern/div/div/div/exploration-host/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[24]/transform/div/div[3]/div/visual-modern/div/svg/svg/g[3]/text[2]",
+        "ICU": "/html/body/div[1]/ui-view/div/div[1]/div/div/div/div/exploration-container/exploration-container-modern/div/div/div/exploration-host/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[24]/transform/div/div[3]/div/visual-modern/div/svg/svg/g[3]/text[3]"
+    },
+
+    "gender": {
+        "parent": "/html/body/div[1]/ui-view/div/div[1]/div/div/div/div/exploration-container/exploration-container-modern/div/div/div/exploration-host/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[6]/transform/div/div[3]/div/visual-modern/div/svg/g[3]",
+        "male": "/html/body/div[1]/ui-view/div/div[1]/div/div/div/div/exploration-container/exploration-container-modern/div/div/div/exploration-host/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[6]/transform/div/div[3]/div/visual-modern/div/svg/g[3]/text[2]",
+        "female": "/html/body/div[1]/ui-view/div/div[1]/div/div/div/div/exploration-container/exploration-container-modern/div/div/div/exploration-host/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[6]/transform/div/div[3]/div/visual-modern/div/svg/g[3]/text[1]"
+    } 
+}

@@ -1,0 +1,110 @@
+group,code,unit
+A,4710,Prairie North Regional Health Authority
+A,4833,Central Zone
+A,4835,North Zone
+A,5953,Northeast Health Service Delivery Area
+A,6001,Yukon
+A,6101,Northwest Territories
+B,1204,Zone 4 - Central
+B,2403,Région de la Capitale-Nationale
+B,2407,Région de l'Outaouais
+B,2413,Région de Laval
+B,2416,Région de la Montérégie
+B,3530,Durham Regional Health Unit
+B,3536,Halton Regional Health Unit
+B,3537,City of Hamilton Health Unit
+B,3544,Middlesex-London Health Unit
+B,3551,City of Ottawa Health Unit
+B,3565,Waterloo Health Unit
+B,3568,Windsor-Essex County Health Unit
+B,4601,Winnipeg Regional Health Authority
+B,4704,Regina Qu'Appelle Regional Health Authority
+B,4706,Saskatoon Regional Health Authority
+B,4832,Calgary Zone
+B,4834,Edmonton Zone
+B,5921,Fraser East Health Service Delivery Area
+B,5941,South Vancouver Island Health Service Delivery Area
+C,1011,Eastern Regional Health Authority
+C,1100,Prince Edward Island / Île-du-Prince-Édouard
+C,1201,Zone 1 - Western
+C,1202,Zone 2 - Northern
+C,1301,Zone 1 (Moncton area)
+C,1302,Zone 2 (Saint John area)
+C,1303,Zone 3 (Fredericton area)
+C,1304,Zone 4 (Edmundston area)
+C,2401,Région du Bas-Saint-Laurent
+C,2402,Région du Saguenay--Lac-Saint-Jean
+C,2404,Région de la Mauricie et du Centre-du-Québec
+C,2405,Région de l'Estrie
+C,3526,The District of Algoma Health Unit
+C,3527,Brant County Health Unit
+C,3535,"Haliburton, Kawartha, Pine Ridge District Health Unit"
+C,3538,Hastings and Prince Edward Counties Health Unit /
+C,3540,Chatham-Kent Health Unit
+C,3541,"Kingston, Frontenac and Lennox and Addington Health Unit"
+C,3542,Lambton Health Unit
+C,3546,Niagara Regional Area Health Unit
+C,3547,North Bay Parry Sound District Health Unit
+C,3555,Peterborough County-City Health Unit
+C,3556,Porcupine Health Unit
+C,3558,The Eastern Ontario Health Unit
+C,3561,Sudbury and District Health Unit
+C,3562,Thunder Bay District Health Unit
+C,3563,Timiskaming Health Unit
+C,4709,Prince Albert Parkland Regional Health Authority
+C,5912,Kootenay-Boundary Health Service Delivery Area
+C,5913,Okanagan Health Service Delivery Area
+C,5914,Thompson/Cariboo Health Service Delivery Area
+C,5942,Central Vancouver Island Health Service Delivery Area
+C,5943,North Vancouver Island Health Service Delivery Area
+D,2408,Région de l'Abitibi-Témiscamingue
+D,2410,Région du Nord-du-Québec
+D,2412,Région de la Chaudière-Appalaches
+D,2414,Région de Lanaudière
+D,2415,Région des Laurentides
+D,3533,Grey Bruce Health Unit
+D,3534,Haldimand-Norfolk Health Unit
+D,3539,Huron County Health Unit / Circonscription sanitaire du comté de Huron
+D,3543,"Leeds, Grenville and Lanark District Health Unit"
+D,3549,Northwestern Health Unit
+D,3554,Perth District Health Unit
+D,3557,Renfrew County and District Health Unit
+D,3560,Simcoe Muskoka District Health Unit
+D,3566,Wellington-Dufferin-Guelph Health Unit
+D,3575,Oxford Elgin St. Thomas Health Unit
+D,4602,Prairie Mountain Health
+D,4603,Interlake-Eastern Regional Health Authority
+D,4605,Southern Health
+D,4701,Sun Country Regional Health Authority
+D,4702,Five Hills Regional Health Authority
+D,4703,Cypress Regional Health Authority
+D,4705,Sunrise Regional Health Authority
+D,4707,Heartland Regional Health Authority
+D,4708,Kelsey Trail Regional Health Authority
+D,4831,South Zone
+D,5911,East Kootenay Health Service Delivery Area
+D,5951,Northwest Health Service Delivery Area
+D,5952,Northern Interior Health Service Delivery Area
+E,1012,Central Regional Health Authority
+E,1013,Western Regional Health Authority
+E,1014,Labrador-Grenfell Regional Health Authority
+E,1203,Zone 3 - Eastern
+E,1305,Zone 5 (Campbellton area)
+E,1306,Zone 6 (Bathurst area)
+E,1307,Zone 7 (Miramichi area)
+E,2409,Région de la Côte-Nord
+E,2411,Région de la Gaspésie--Îles-de-la-Madeleine
+F,2417,Région du Nunavik
+F,2418,Région des Terres-Cries-de-la-Baie-James
+F,4604,Northern Regional Health Authority
+F,4714,Mamawetan/Keewatin/Athabasca
+F,6201,Nunavut
+G,2406,Région de Montréal
+G,3595,City of Toronto Health Unit
+G,5932,Vancouver Health Service Delivery Area
+H,3553,Peel Regional Health Unit
+H,3570,York Regional Health Unit
+H,5922,Fraser North Health Service Delivery Area
+H,5923,Fraser South Health Service Delivery Area
+H,5931,Richmond Health Service Delivery Area
+H,5933,North Shore/Coast Garibaldi Health Service Delivery Area
