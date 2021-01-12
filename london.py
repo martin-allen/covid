@@ -4,8 +4,9 @@ from thumbs import make_thumbnail
 from tweet import send_tweet
 
 '''
-Wraps all processes that run from MLHU's
-daily updates...
+Checks MLHU for updates. 
+If data is new, updates thumbnails
+and tweets.
 '''
 
 # today's data
