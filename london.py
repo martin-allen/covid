@@ -5,7 +5,7 @@ from tweet import send_tweet
 
 '''
 Wraps all processes that run from MLHU's
-daily updates...
+daily updates..
 '''
 
 # today's data
