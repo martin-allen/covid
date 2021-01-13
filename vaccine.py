@@ -21,17 +21,17 @@ def get_data():
     df = pd.read_csv(filename)
     df.rename(columns={
         'report_date': 'date',
-        'previous_day_doses_administered': 'prev',
+        'previous_day_doses_administered': 'new',
         'total_doses_administered': 'total',
         'total_vaccinations_completed': 'vaccinated' 
         }, inplace = True)
     df.set_index('date', inplace = True)
     df.index.name = 'date'
-    df = df[['prev', 'total', 'vaccinated']][1:]
+    df = df[['new', 'total', 'vaccinated']][1:]
     
     # fixing ints
     commas = lambda s: df[s].str.replace(',', '')
-    df.prev = commas('prev')
+    df.new = commas('new')
     df.total = commas('total')
     df.vaccinated = commas('vaccinated')
     df.vaccinated = df.vaccinated.replace(np.nan, 0)
