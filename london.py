@@ -11,7 +11,7 @@ daily updates..
 # today's data
 data = scrape()
 
-updates only if data is new
+# updates only if data is new
 if data:
     print('Data is new.')
     print('Making thumbnail...')
