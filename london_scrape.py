@@ -80,6 +80,7 @@ def scrape():
 # urls and XPATHs
 with open('./data/paths.json') as file:
     paths = json.load(file)
+
 today = datetime.today()
 yesterday = today - timedelta(days = 1)
 today = today.strftime('%Y-%m-%d')
