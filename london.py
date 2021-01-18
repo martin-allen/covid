@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import pandas as pd
 from london_scrape import scrape
 from thumbs import make_thumbnail

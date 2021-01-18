@@ -111,7 +111,7 @@ def plot(new, total, vaccd):
     
     return thumb
     
-if __name__ == "__main__":
+def main():
     df = pd.read_csv('./data/output/vaccine.csv')
     today = pd.to_datetime(df.iloc[-1].date).strftime('%b %d')
     doses = int(df.iloc[-1].new)
