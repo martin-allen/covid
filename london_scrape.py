@@ -8,12 +8,18 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 
 def load():
     
+    # setting to headless
+    options = Options()
+    options.headless = True
+    
     # starting browser
     driver_path = 'chromedriver'
-    driver = webdriver.Chrome(executable_path=driver_path)
+    driver = webdriver.Chrome(executable_path=driver_path,
+                              chrome_options=options)
     
     # going to page
     url = paths['url']
