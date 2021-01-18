@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+
 import requests
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
+from vacc_thumb_v2 import main
 
 def get_data():
     
@@ -43,4 +46,5 @@ def get_data():
     return df
 
 if __name__ == "__main__":
-    df = get_data() 
+    get_data()
+    main() 
