@@ -3,6 +3,7 @@ import altair as alt
 
 def rows(df):
     
+    today = pd.to_datetime(df.iloc[-1].date).strftime('%b %d')    
     print(f'Making rows for {today}...')
     
     # new dots/line
@@ -83,9 +84,11 @@ def rows(df):
     
     return new, total, vaccd
 
-def plot(new, total, vaccd):
+def plot(df, new, total, vaccd):
     
     print('Combining into thumbnail...')
+    today = pd.to_datetime(df.iloc[-1].date).strftime('%b %d')
+    doses = int(df.iloc[-1].new)
     
     thumb = alt.VConcatChart(
         vconcat = [new, total, vaccd]
@@ -113,11 +116,9 @@ def plot(new, total, vaccd):
     
 def main():
     df = pd.read_csv('./data/output/vaccine.csv')
-    today = pd.to_datetime(df.iloc[-1].date).strftime('%b %d')
-    doses = int(df.iloc[-1].new)
     
     new, total, vaccd = rows(df)
-    thumb = plot(new, total, vaccd)
+    thumb = plot(df, new, total, vaccd)
     
     thumb.save('./data/viz/vacc_chart.png', scale_factor=2.0)
     print('Thumbnail saved to ./data/viz/vacc_chart.png!')    
