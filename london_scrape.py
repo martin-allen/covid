@@ -87,10 +87,7 @@ def scrape():
 with open('./data/paths.json') as file:
     paths = json.load(file)
 
-# today = datetime.today()
-# yesterday = today - timedelta(days = 1)
-# today = today.strftime('%Y-%m-%d')
-# yesterday = yesterday.strftime('%m-%d')
-
-today = '2021-01-24'
-yesterday = '2021-01-23'
+today = datetime.today()
+yesterday = today - timedelta(days = 1)
+today = today.strftime('%Y-%m-%d')
+yesterday = yesterday.strftime('%m-%d')
