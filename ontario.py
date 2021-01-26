@@ -230,5 +230,5 @@ if __name__ == "__main__":
     
     df = get_data()
     total_data = total(df)
-    daily_data =  daily()
+    daily_data = daily()
     fourteen()
