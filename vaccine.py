@@ -26,7 +26,7 @@ def get_data():
         'report_date': 'date',
         'previous_day_doses_administered': 'new',
         'total_doses_administered': 'total',
-        'total_vaccinations_completed': 'vaccinated' 
+        'total_individuals_fully_vaccinated': 'vaccinated' 
         }, inplace = True)
     df.set_index('date', inplace = True)
     df.index.name = 'date'
