@@ -78,19 +78,21 @@ def total(df):
            'Ottawa','Waterloo','Windsor']
     
     # getting total counts for each unit
+    filename = './data/output/ontario_total.csv'
+    old_total = pd.read_csv(filename).set_index('date')
     total_counts = []
-    for unit in units_canada:
+    for i,unit in enumerate(units_canada):
         d = {}
         unit_grp = df.groupby('unit').get_group(unit)
-        d['total'] = len(unit_grp['age'])
+        cases_today = len(unit_grp[unit_grp.reported == today])
+        cases_so_far = old_total[ind[i]][0]
+        d['total'] = cases_so_far + cases_today
         total_counts.append(d)
         
     # today's total counts
     total_df = pd.DataFrame(total_counts, index=ind)
     
     # adding total to record
-    filename = './data/output/ontario_total.csv'
-    old_total = pd.read_csv(filename).set_index('date')
     new_total_row = pd.DataFrame(total_df.total).T
     new_total_row.index = [today]
     new_total = pd.concat([new_total_row, old_total])
@@ -188,6 +190,7 @@ def fourteen():
     change_df.to_csv(filename)   
     
     print(f'Wrote 14-day change record to file at {filename}.')
+    return change_df
 
 def demo():
     '''
@@ -231,4 +234,4 @@ if __name__ == "__main__":
     df = get_data()
     total_data = total(df)
     daily_data = daily()
-    fourteen()
+    fteen = fourteen()
