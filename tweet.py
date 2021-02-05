@@ -1,21 +1,25 @@
 import tweepy as tw
 import pandas as pd
-import math
 
 def data():
     # data
-    ldn = pd.read_csv('./data/output/ml_general.csv')[::-1][35:]
+    df = pd.read_csv('./data/output/vaccine.csv')
     
     # getting date and new cases
-    today = pd.to_datetime(ldn.iloc[-1].date).strftime('%b %d')
-    cases = int(ldn.iloc[-1].new)
-    avg = round(ldn.iloc[-1].avg, 1)
+    today = pd.to_datetime(df.iloc[-1].date).strftime('%b %d')
+    total_vaccd = int(df.iloc[-1].vaccinated)
+    new_vaccd = total_vaccd - int(df.iloc[-2].vaccinated)
+    total_doses = int(df.iloc[-1].total)
+    new_doses = int(df.iloc[-1].new)
     
     print('Data collected.')
+    return today, total_vaccd, new_vaccd, total_doses, new_doses
     
-    return today, cases, avg
 
-def tweet(today, cases, avg):
+def send_tweet():
+    
+    # data
+    today, total_vaccd, new_vaccd, total_doses, new_doses = data()
     
     # keys
     api = 'DD9yBJNYCsSaExt2A0k0tpP28'
@@ -39,11 +43,11 @@ def tweet(today, cases, avg):
     api = tw.API(auth)
         
     # creating media object
-    media = api.media_upload('./data/viz/chart.png')
+    media = api.media_upload('./data/viz/vacc_chart.png')
     message = f'''
-        {today.upper()} IN LONDON: 
-        \n\n \U0001F4C8 {cases} new cases
-        \n \U0001F4C8 average of {avg} over 7 days
+        ONTARIO VACCINATIONS ON {today.upper()}: 
+        \n\n \U0001F4C8 {new_vaccd} more people vaccinated
+        \n \U0001F4C8 {total_vaccd} total people have been vaccinated so far
     '''
 
     # tweet command
@@ -51,7 +55,5 @@ def tweet(today, cases, avg):
                     media_ids = [media.media_id])
     print('Tweeted.')
     
-def send_tweet():
-    today, cases, avg = data()
-    tweet(today, cases, avg)
-    
+if __name__ == "__main__":
+    send_tweet()

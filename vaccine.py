@@ -4,7 +4,8 @@ import requests
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-from vacc_thumb_v2 import main
+from vacc_thumb_v2 import make_chart
+from tweet import send_tweet
 
 def get_data():
     
@@ -47,4 +48,5 @@ def get_data():
 
 if __name__ == "__main__":
     get_data()
-    main() 
+    make_chart()
+    send_tweet() 
