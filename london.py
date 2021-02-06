@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import json
 import time
 import smtplib
@@ -19,7 +21,7 @@ def load():
     # starting browser
     driver_path = 'chromedriver'
     driver = webdriver.Chrome(executable_path=driver_path,
-                              chrome_options=options)
+                              options=options)
     
     # going to page
     url = paths['url']
