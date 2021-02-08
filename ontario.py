@@ -226,13 +226,10 @@ def demo():
 if __name__ == "__main__":
     
     # datetime for storage
-    #today = datetime.today()
-    #yesterday = today - timedelta(days = 1)
-    #today = today.strftime('%Y-%m-%d')
-    #yesterday = yesterday.strftime('%Y-%m-%d')
-
-    today = '2021-02-07'
-    yesterday = '2021-02-06'
+    today = datetime.today()
+    yesterday = today - timedelta(days = 1)
+    today = today.strftime('%Y-%m-%d')
+    yesterday = yesterday.strftime('%Y-%m-%d')
     
     df = get_data()
     total_data = total(df)
