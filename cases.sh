@@ -8,7 +8,10 @@
 ./ontario.py
 ./london.py
 
-# git
-git add .
-git commit -m 'Data update'
-git push
+#
+# git: need to find login input for github
+# 
+
+# git add .
+# git commit -m 'Data update'
+# git push
