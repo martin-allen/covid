@@ -1,5 +1,6 @@
 import tweepy as tw
 import pandas as pd
+import json
 
 def data():
     # data
@@ -22,10 +23,12 @@ def send_tweet():
     today, total_vaccd, new_vaccd, total_doses, new_doses = data()
     
     # keys
-    api = 'DD9yBJNYCsSaExt2A0k0tpP28'
-    api_secret = 'aI37ZbnzndmmwBXPBRByh52XXRi209A7uY1W4fMt0qtdidYMnc'
-    access = '1346571526536097794-Of2fvZRvJe83KknSvrHcwOope07TsP'
-    access_secret = 'xpED1ynLSawepPXt4mUC67xwr7u80nPLEG0IrrOJBcE7G'
+    with open('./data/viz/keys.json') as file:
+        paths = json.load(file)
+        api = paths['api']
+        api_secret = paths['api_secret']
+        access = paths['access']
+        access_secret = paths['access_secret']
 
 
     # authenticating
@@ -37,7 +40,6 @@ def send_tweet():
         access,
         access_secret
     )
-    print('Authenticated.')
 
     # api object
     api = tw.API(auth)
@@ -46,8 +48,8 @@ def send_tweet():
     media = api.media_upload('./data/viz/vacc_chart.png')
     message = f'''
         ONTARIO VACCINATIONS ON {today.upper()}: 
-        \n\n \U0001F4C8 {new_vaccd} more people vaccinated
-        \n \U0001F4C8 {total_vaccd} total people have been vaccinated so far
+        \n\n \U0001F4C8 {new_vaccd:,} more people vaccinated
+        \n \U0001F4C8 {total_vaccd:,} total people have been vaccinated so far
     '''
 
     # tweet command
