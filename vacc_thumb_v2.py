@@ -1,3 +1,4 @@
+from numpy.lib.index_tricks import nd_grid
 import pandas as pd
 import altair as alt
 
@@ -18,14 +19,15 @@ def rows(df):
              )),
         alt.Y('total:Q',
             axis = alt.Axis(
-                title='Total Doses',
-                titleColor = '#8FB38F',
-                orient = 'right',
+                title='TOTAL doses/vaccinations',
+                titleFontSize = 15,
+                titleColor = '#66334B',
+                orient = 'left',
                 grid=False
                 ))
     ).properties(
-        width = 600,
-        height = 400
+        width = 700,
+        height = 250
     )
     
     # vaccination bars
@@ -42,20 +44,18 @@ def rows(df):
         ),
         alt.Y('vaccinated:Q', 
               axis = alt.Axis(
-                  title = 'Total People (Two Doses)',
-                  titleColor = '#66334B',
-                  orient = 'right'
+                  orient = 'left'
                 ))
     ).properties(
-        width = 600,
-        height = 400,
+        width = 700,
+        height = 250,
     )
     
     main = alt.layer(
         total, vaccd
     ).properties(
-        width = 600,
-        height = 400
+        width = 700,
+        height = 250
     )
     
     new_doses = alt.Chart(df).mark_bar(
@@ -69,13 +69,13 @@ def rows(df):
              )),
         alt.Y('new:Q',
              axis = alt.Axis(
-                 titleColor = '#336634',
-                 orient = 'right',
+                 titleColor = '#66334B',
+                 orient = 'left',
                  grid=False
              ))
     ).properties(
-        width = 600,
-        height = 200
+        width = 700,
+        height = 250
     )
     
     new_vaccs = alt.Chart(df).mark_bar(
@@ -90,21 +90,22 @@ def rows(df):
              )),
         alt.Y('new_vaccinated:Q',
              axis = alt.Axis(
-                 title = 'New doses/vaccinations',
-                 titleColor = '#336634',
-                 orient = 'right',
+                 title = 'NEW doses/vaccinations',
+                 titleColor = '#66334B',
+                 titleFontSize = 15,
+                 orient = 'left',
                  grid=False
              ))
     ).properties(
-        width = 600,
-        height = 200
+        width = 700,
+        height = 250
     )
     
     new = alt.layer(
         new_doses, new_vaccs
     ).properties(
-        width = 600,
-        height = 200
+        width = 700,
+        height = 250
     )
     
     return main, new
@@ -115,6 +116,8 @@ def plot(df, main, new):
     today = pd.to_datetime(df.iloc[-1].date).strftime('%b %d')
     nv = int(df.iloc[-1].new_vaccinated)
     v = int(df.iloc[-1].vaccinated)
+    nd = int(df.iloc[-1].new)
+    d = int(df.iloc[-1].total)
     
     thumb = alt.VConcatChart(
         vconcat = [main, new]
@@ -123,17 +126,18 @@ def plot(df, main, new):
     ).properties(
                 title = {
                     'text': [
-                        'Ontario Vaccinations',
-                        f'{today}: {nv:,d} new, {v:,d} total'
+                        'Ontario Doses and Vaccinations',
+                        f'{today}: {v:,d} people vaccinated so far'
                     ],
                     'subtitle': [
-                        'doses vs vaccinations: total and daily',
+                        f'Total doses: {d:,}; total vaccinations: {v:,},',
+                        f'New doses: {nd:,}; new vaccinations: {nv:,},',
                         '@OntVaccine by @__martinallen__'
                     ]
                 }
         ).configure_title(
                 fontSize = 30,
-                color = '#336634'
+                color = '#66334B'
         )
     
     return thumb
