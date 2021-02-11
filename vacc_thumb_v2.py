@@ -114,7 +114,7 @@ def plot(df, new, total, vaccd):
     
     return thumb
     
-def main():
+def make_chart():
     df = pd.read_csv('./data/output/vaccine.csv')
     
     new, total, vaccd = rows(df)

@@ -5,11 +5,11 @@
     "parent_css": "#pvExplorationHost > div > div > exploration > div > explore-canvas-modern > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.actualSizeAlignLeft.actualSizeAlignTop.actualSizeOrigin > div.visualContainerHost > visual-container-repeat",
 
     "general": {
-        "total": ".//visual-container-modern[22]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
-        "new_cases": ".//visual-container-modern[21]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
+        "total": ".//visual-container-modern[26]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
+        "new_cases": ".//visual-container-modern[25]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
         "new_deaths": ".//visual-container-modern[18]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
-        "total_deaths": ".//visual-container-modern[19]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
-        "total_recovered": ".//visual-container-modern[20]/transform/div/div[3]/div/visual-modern/div/div/div/p/span"
+        "total_deaths": ".//visual-container-modern[23]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
+        "total_recovered": ".//visual-container-modern[24]/transform/div/div[3]/div/visual-modern/div/div/div/p/span"
     },
 
     "student": {
