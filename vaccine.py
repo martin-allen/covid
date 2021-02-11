@@ -38,7 +38,11 @@ def get_data():
     df.new = commas('new')
     df.total = commas('total')
     df.vaccinated = commas('vaccinated')
-    df.vaccinated = df.vaccinated.replace(np.nan, 0)
+    df.vaccinated = df.vaccinated.replace(np.nan, 0).astype(int)
+    
+    # new vaccinations col
+    df['new_vaccinated'] = df.vaccinated.diff()
+    df.new_vaccinated = df.new_vaccinated.replace(np.nan, 0)
     
     filename = './data/output/vaccine.csv'
     df.to_csv(filename)
@@ -49,4 +53,4 @@ def get_data():
 if __name__ == "__main__":
     get_data()
     make_chart()
-    send_tweet() 
+    # send_tweet() 
