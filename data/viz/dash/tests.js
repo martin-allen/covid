@@ -2,7 +2,7 @@
 // PIANO
 //
 
-d3.csv('data/output/ml_test.csv')
+d3.csv('../../output/ml_test.csv')
     .then((data) => {
         let ml = [];
         let ont = [];
@@ -321,7 +321,7 @@ function barHover(cls) {
 // TESTING BARS
 //
 
-d3.csv('./data/ml_test.csv')
+d3.csv('../../output/ml_test.csv')
     .then((data) => {
         let tests = [];
         let rates = [];

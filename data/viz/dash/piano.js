@@ -1,4 +1,4 @@
-d3.csv('data/output/ml_test.csv')
+d3.csv('../../output/ml_test.csv')
     .then((data) => {
         let ml = [];
         let ont = [];

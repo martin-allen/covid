@@ -1,5 +1,5 @@
 // loading data & calling draw function
-d3.csv('data/output/ml_general.csv')
+d3.csv('../../output/ml_general.csv')
     .then((data) => {
         
         // desired format is 3 labelled arrays

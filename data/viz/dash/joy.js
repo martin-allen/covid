@@ -1,4 +1,4 @@
-d3.csv('data/output/ontario_new.csv')
+d3.csv('../../output/ontario_new.csv')
     .then(data => {
         // JS is disgusting:
         data = data.reverse().slice(35,).filter(e => data.indexOf(e) != 185);
