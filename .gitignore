@@ -3,5 +3,6 @@
 /__pycache__
 data/ontario_raw.csv
 data/ontario_data.csv
-data/viz/keys.json
-data/viz/creds.json
+data/viz/files/keys.json
+data/viz/files/creds.json
+data/viz/files/update.py

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID in London, Ont.</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="daily.js"></script>
+    <script src="tests.js"></script>
+    <script src="table.js"></script>
+    <script src="joy.js"></script>
+</head>
+<body>
+    
+    <div id='viz'>
+
+        <!-- FACTBOX -->
+
+        <div id='fact'>
+            <h1>COVID in London, Ont.</h1>
+            <div id='fact-facts'>
+                <div id='fact-date'>
+                    <p><tspan>Tuesday</tspan>,<br>Jan. 12</p>
+                </div>
+                <div id='fact-boxes'>
+                        <div id='fact-cases-new'>
+                            <p class='fact-num'>150</p>
+                            <p class='fact-desc'>more cases</p>
+                        </div>
+                        <div id='fact-cases-total'>
+                            <p class='fact-num'>4321</p>
+                            <p class='fact-desc'>total cases</p>
+                        </div>
+                        <div id='fact-deaths-new'>
+                            <p class='fact-num'>5</p>
+                            <p class='fact-desc'>more deaths</p>                        
+                        </div>
+                        <div id='fact-deaths-total'>
+                            <p class='fact-num'>141</p>
+                            <p class='fact-desc'>total deaths</p>
+                        </div>
+                </div>
+                <div id='fact-change'>
+                    <div id='fact-change-arrow'></div>
+                    <div id='fact-change-pct'>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW DAILY CASES -->
+        <div id='daily'>
+            <h1>New daily cases</h1>
+            <p>
+                Cases have risen steadily since the fall, 
+                and exploded in the winter despite controlling 
+                measures. This chart shows each day's new cases, 
+                along with a rolling seven-day average.
+            </p>
+            <div id='daily-chart'>
+            </div>
+        </div>
+
+        <!-- TESTING -->
+        <div id='piano'>
+            <div id='piano-chart'>
+            </div>
+        </div>
+        <div id='testing'>
+            <div id='testing-chart'>
+            </div>
+        </div>
+
+
+
+        <!-- PEERS -->
+
+        <div id='peers'>
+                <!-- <div id='peer_table'>
+                    <table>
+                        <tr id='table_hed'>
+                            <th id='table_region'></th>
+                            <th id='table_change'>LAST TWO WEEKS</th>
+                        </tr>
+                        <tr id='table_London'>
+                            <td class='table_region'>London</td>
+                            <td class='table_change'>
+                                <div class='grid-table-num'></div>
+                                <div class='grid-table-line'></div>
+                            </td>
+                        </tr>
+                        <tr id='table_Durham'>
+                            <td class='table_region'>Durham</td>
+                            <td class='table_change'>
+                                <div class='grid-table-num'></div>
+                                <div class='grid-table-line'></div>
+                            </td>
+                        </tr>
+                        <tr id='table_Halton'>
+                            <td class='table_region'>Halton</td>
+                            <td class='table_change'>
+                                <div class='grid-table-num'></div>
+                                <div class='grid-table-line'></div>
+                            </td>
+                        </tr>
+                        <tr id='table_Hamilton'>
+                            <td class='table_region'>Hamilton</td>
+                            <td class='table_change'>
+                                <div class='grid-table-num'></div>
+                                <div class='grid-table-line'></div>
+                            </td>
+                        </tr>
+                        <tr id='table_Ottawa'>
+                            <td class='table_region'>Ottawa</td>
+                            <td class='table_change'>
+                                <div class='grid-table-num'></div>
+                                <div class='grid-table-line'></div>
+                            </td>
+                        </tr>
+                        <tr id='table_Waterloo'>
+                            <td class='table_region'>Waterloo</td>
+                            <td class='table_change'>
+                                <div class='grid-table-num'></div>
+                                <div class='grid-table-line'></div>
+                            </td>
+                        </tr>
+                        <tr id='table_Windsor'>
+                            <td class='table_region'>Windsor</td>
+                            <td class='table_change'>
+                                <div class='grid-table-num'></div>
+                                <div class='grid-table-line'></div>
+                            </td>
+                        </tr>
+                    </table>
+            </div> -->
+
+            <div id='joy'>
+                <h1>London and its peers</h1>
+                <p>
+                    These are six other health units in Ontario
+                    grouped with London by Stats Canada due to their
+                    demographic similarity. 
+                </p>
+                <h2>Average Daily Cases</h2>
+                <div id='joy-chart'>
+                </div>
+            </div>
+        </div>
+
+</body>

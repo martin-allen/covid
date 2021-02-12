@@ -1,0 +1,191 @@
+/* 
+
+BLUE PALETTE:
+
+#33679E
+#4B98EB
+#7294B8
+#9ECDFF
+#33679E
+
+*/
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#viz {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Factbox */
+
+#fact {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+    padding: 0px;
+}
+
+#fact h1 {
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    border-bottom: 3px solid grey;
+}
+
+#fact-date {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#fact-facts {
+    display: grid;
+    grid-template-columns: auto 50% 35%;
+}
+
+#fact-boxes {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 20px;
+    text-align: center;
+
+    margin-top: 18px;
+}
+
+.fact-num {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.fact-desc {
+    font-size: 12px;
+    font-weight: lighter;
+    margin: 0px;
+}
+
+/* DAILY */
+
+#daily {
+    width: 75%;
+    margin: auto;
+}
+
+#daily h1 {
+    margin: 40px 0px 0px 0px;
+    padding: 0px;
+}
+
+#daily p {
+    margin: 0px;
+    margin-top: 3px;
+}
+
+#daily svg {
+    margin: 0px;
+    padding: 0px;
+}
+
+#daily-tip {
+    font-size: 18px;
+}
+
+/**/
+/* TESTING */
+/**/
+
+/* TESTS */
+#testing {
+    width: 75%;
+    margin: auto;
+}
+
+#testing h1, h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#testing p {
+    margin: 0px;
+    margin-top: 3px;
+}
+
+/* PIANO */
+#piano {
+    width: 75%;
+    margin: auto;
+}
+
+/* PEERS */
+
+#peers {
+    width: 75%;
+    margin: auto;
+}
+
+#peer_table table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 75%;
+    margin: auto;
+}
+
+#peer_table th {
+    border-bottom: 1px solid black;
+    font-size: 20px;
+}
+
+#table_region {
+    width: 10%;
+}
+#table_London {
+    border-bottom: 1px solid grey;
+}
+
+#peer_table tr:not(#table_London) {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+#peer_table tr:not(#table_hed) {
+    height: 50px;
+}
+
+#peer_table th, td {
+    padding: 0px;
+}
+
+.table_region {
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.table_change {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-table-num {
+    display: flex;
+    width: 20%;
+    height: 80%;
+}
+
+.grid-table-num p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.grid-table-line {
+    width: 40%;
+}
+

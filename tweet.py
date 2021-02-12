@@ -23,7 +23,7 @@ def send_tweet():
     today, total_vaccd, new_vaccd, total_doses, new_doses = data()
     
     # keys
-    with open('./data/viz/keys.json') as file:
+    with open('./data/viz/files/keys.json') as file:
         paths = json.load(file)
         api = paths['api']
         api_secret = paths['api_secret']
@@ -50,6 +50,7 @@ def send_tweet():
         ONTARIO VACCINATIONS ON {today.upper()}: 
         \n\n \U0001F4C8 {new_vaccd:,} more people vaccinated
         \n \U0001F4C8 {total_vaccd:,} total people have been vaccinated so far
+        \n\n #COVID19Ontario #onpoli
     '''
 
     # tweet command
