@@ -58,6 +58,7 @@ function drawJoy(data) {
 
     // functions
     const area = d3.area()
+        .curve(d3.curveStep)
         .x((d,i) => x(data.dates[i]))
         .y0(0)
         .y1(d => z(d));
@@ -99,7 +100,8 @@ function drawJoy(data) {
         .attr('d', d => area(d.values));
     rows.append("path")
         .attr("fill", "none")
-        .attr("stroke", "black")
+        .attr("stroke", '#19334F')
+        .attr('stroke-width', 2.5)
         .style("mix-blend-mode", "multiply")
         .attr("d", d => line(d.values));
 

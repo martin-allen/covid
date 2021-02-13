@@ -43,7 +43,7 @@ function drawDaily(data) {
 
     const blues = d3.schemeBlues[9];
     const barColour = blues[2];
-    const lineColour = blues[8];
+    const lineColour = '#22456B';
 
     const svg = d3.select('#daily')
         .select('#daily-chart')
@@ -66,10 +66,12 @@ function drawDaily(data) {
     // DRAWING TOOLS
     // line function
     const line = d3.line()
+        .curve(d3.curveStep)
         .x((d,i) => xLine(data.dates[i]))
         .y(d => y(d));
     // area underlying line
     const area = d3.area()
+        .curve(d3.curveStep)
         .x((d,i) => xLine(data.dates[i]))
         .y0(y(0))
         .y1(d => y(d));
@@ -86,14 +88,14 @@ function drawDaily(data) {
         g
             .attr("transform", `translate(${margin.left},0)`)
             .call(d3.axisLeft(y))
-            .call(g => g.select('.domain').remove())
+            // .call(g => g.select('.domain').remove())
             .call(g => g.selectAll('.tick text')
                 .style('font-size', '14px'))
-            .call(g => g.selectAll('.tick:not(:first-of-type) line')
-                .attr('x2', width)
-                .attr('stroke', '#dbdbdb')
-                .attr('stroke-dasharray', '4 8')
-                .attr('stroke-width', 0.7))
+            // .call(g => g.selectAll('.tick:not(:first-of-type) line')
+            //     .attr('x2', width)
+            //     .attr('stroke', '#dbdbdb')
+            //     .attr('stroke-dasharray', '4 8')
+            //     .attr('stroke-width', 0.7))
             .call(g => g.select('.tick:first-of-type').remove());
        
         // tooltip
@@ -101,6 +103,7 @@ function drawDaily(data) {
        const today = frmt(data.dates[data.dates.length - 1]);
        const tip = svg.append('g')
                .attr('id', 'daily-tip')
+               .attr('transform', `translate(${margin.left + 20}, 0)`)
        dateTip = tip.append('text')
                .attr('x', 0)
                .attr('y', 50)
@@ -108,7 +111,7 @@ function drawDaily(data) {
                .text(`${today}:`)
        tip.append('circle')
                .attr('cx', 85)
-               .attr('cy', 45)
+               .attr('cy', 44)
                .attr('r', 7)
                .attr('fill', barColour)
        newTip = tip.append('text')
@@ -116,12 +119,12 @@ function drawDaily(data) {
                .attr('y', 50)
                .text(`${casesToday} new cases`)
        tip.append('circle')
-               .attr('cx', 235)
-               .attr('cy', 45)
+               .attr('cx', 215)
+               .attr('cy', 44)
                .attr('r', 7)
                .attr('fill', lineColour)
        avgTip = tip.append('text')
-           .attr('x', 248)
+           .attr('x', 225)
            .attr('y', 50)
            .text(`${avgToday.toFixed(2)} average`)
     
@@ -201,7 +204,7 @@ function drawDaily(data) {
             .attr('id', 'daily-area')
         .datum(data.avg)
             .attr('fill', barColour)
-            .attr('opacity', 0.4)
+            .attr('opacity', 0.6)
             .attr('d', area);
 
     // drawing bars
@@ -215,7 +218,7 @@ function drawDaily(data) {
             .attr('height', d => y(0) - y(d))
             .attr('width', xBar.bandwidth())
             .attr('fill', barColour)
-            .attr('opacity', 0.6);
+            .attr('opacity', 1);
     
     // drawing line
     const path = svg.append('path')

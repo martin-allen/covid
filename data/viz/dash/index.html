@@ -10,6 +10,9 @@
     <script src="tests.js"></script>
     <script src="table.js"></script>
     <script src="joy.js"></script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     
@@ -56,25 +59,40 @@
             <p>
                 Cases have risen steadily since the fall, 
                 and exploded in the winter despite controlling 
-                measures. This chart shows each day's new cases, 
-                along with a rolling seven-day average.
+                measures. This chart shows each day's 
+                <tspan style='color:#19334F; font-weight:bold'>
+                    new cases
+                </tspan> , 
+                along with the 
+                <tspan style='color:#8398AE; font-weight:bold'>
+                    rolling average
+                </tspan> 
+                of the previous 
+                seven day's cases.
             </p>
             <div id='daily-chart'>
             </div>
         </div>
 
+        <br><br><br>
+
         <!-- TESTING -->
-        <div id='piano'>
-            <div id='piano-chart'>
-            </div>
-        </div>
         <div id='testing'>
+            <h1>Test positivty and tests completed</h1>
+            <p>
+                <tspan style='color:#85333D; font-weight:bold'>
+                    Test positivity
+                </tspan> 
+                was highest in the spring, when 
+                <tspan style='color:#3F007D; font-weight:bold'>
+                    tests
+                </tspan> 
+                were scarce. But in the peak of the 
+                pandemic this winter, it rose steadily again.
+            </p>
             <div id='testing-chart'>
             </div>
         </div>
-
-
-
         <!-- PEERS -->
 
         <div id='peers'>
@@ -141,9 +159,17 @@
                 <p>
                     These are six other health units in Ontario
                     grouped with London by Stats Canada due to their
-                    demographic similarity. 
+                    demographic similarity. This section uses the 
+                    Ontario-wide data for consistency, so figures will 
+                    differ marginally from data from the MLHU.
                 </p>
+                <br><br>
                 <h2>Average Daily Cases</h2>
+                <p>
+                    London and all its peers have followed
+                    the provincial waves, though some units, like 
+                    Ottawa and Windsor, had isolated spikes.
+                </p>
                 <div id='joy-chart'>
                 </div>
             </div>
