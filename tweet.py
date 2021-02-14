@@ -50,6 +50,7 @@ def send_tweet():
         ONTARIO VACCINATIONS ON {today.upper()}: 
         \n\n \U0001F4C8 {new_vaccd:,} more people vaccinated
         \n \U0001F4C8 {total_vaccd:,} total people have been vaccinated so far
+        \n\n #COVID19Ontario #onpoli
     '''
 
     # tweet command

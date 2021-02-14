@@ -51,6 +51,6 @@ def get_data():
     return df
 
 if __name__ == "__main__":
-    # get_data()
+    get_data()
     make_chart()
-    # send_tweet() 
+    send_tweet() 
