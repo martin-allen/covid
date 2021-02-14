@@ -226,8 +226,8 @@ def demo():
 if __name__ == "__main__":
     
     # datetime for storage
-    today = datetime.today()
-    yesterday = today - timedelta(days = 1)
+    today = datetime.today() - timedelta(days = 1)
+    yesterday = today - timedelta(days = 2)
     today = today.strftime('%Y-%m-%d')
     yesterday = yesterday.strftime('%Y-%m-%d')
     
