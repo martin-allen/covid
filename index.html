@@ -6,6 +6,7 @@
     <title>COVID in London, Ont.</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="fact.js"></script>
     <script src="daily.js"></script>
     <script src="tests.js"></script>
     <script src="table.js"></script>
@@ -13,6 +14,7 @@
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     
@@ -24,31 +26,28 @@
             <h1>COVID in London, Ont.</h1>
             <div id='fact-facts'>
                 <div id='fact-date'>
-                    <p><tspan>Tuesday</tspan>,<br>Jan. 12</p>
+                    <tspan></tspan>
+                    <p></p>
                 </div>
                 <div id='fact-boxes'>
-                        <div id='fact-cases-new'>
-                            <p class='fact-num'>150</p>
-                            <p class='fact-desc'>more cases</p>
+                        <div id='fact-new'>
+                            <p class='fact-num num'></p>
+                            <p class='fact-desc'>new cases</p>
                         </div>
-                        <div id='fact-cases-total'>
-                            <p class='fact-num'>4321</p>
+                        <div id='fact-total'>
+                            <p class='fact-num num'></p>
                             <p class='fact-desc'>total cases</p>
                         </div>
-                        <div id='fact-deaths-new'>
-                            <p class='fact-num'>5</p>
-                            <p class='fact-desc'>more deaths</p>                        
+                        <div id='fact-active'>
+                            <p class='fact-num num'></p>
+                            <p class='fact-desc'>active cases</p>                        
                         </div>
-                        <div id='fact-deaths-total'>
-                            <p class='fact-num'>141</p>
+                        <div id='fact-deaths'>
+                            <p class='fact-num num'></p>
                             <p class='fact-desc'>total deaths</p>
                         </div>
                 </div>
-                <div id='fact-change'>
-                    <div id='fact-change-arrow'></div>
-                    <div id='fact-change-pct'>
-                        <p></p>
-                    </div>
+                <div id='fact-line'>
                 </div>
             </div>
         </div>
@@ -61,8 +60,7 @@
                 and exploded in the winter despite controlling 
                 measures. This chart shows each day's 
                 <tspan style='color:#19334F; font-weight:bold'>
-                    new cases
-                </tspan> , 
+                    new cases</tspan>, 
                 along with the 
                 <tspan style='color:#8398AE; font-weight:bold'>
                     rolling average
@@ -80,15 +78,16 @@
         <div id='testing'>
             <h1>Test positivty and tests completed</h1>
             <p>
+                Weekly
                 <tspan style='color:#85333D; font-weight:bold'>
-                    Test positivity
+                    test positivity
                 </tspan> 
                 was highest in the spring, when 
                 <tspan style='color:#3F007D; font-weight:bold'>
                     tests
                 </tspan> 
                 were scarce. But in the peak of the 
-                pandemic this winter, it rose steadily again.
+                pandemic this winter, it rose steadily again. 
             </p>
             <div id='testing-chart'>
             </div>

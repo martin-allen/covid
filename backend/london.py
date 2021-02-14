@@ -73,6 +73,15 @@ def general(parent):
     
     # saving to file
     final_data.to_csv(filename)
+    
+    # summary data
+    summary_data = pd.DataFrame([new_cases, total_cases,
+                                 total_deaths, active],
+               columns=[today],
+               index = ['new','total','deaths','active']).T
+    summary_data.index.name = 'date'
+    summary_data.to_csv('../data/output/ml_summary.csv')
+    
     return True
 
 if __name__ == "__main__":

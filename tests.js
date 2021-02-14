@@ -82,6 +82,7 @@ function draw(data) {
             .call(d3.axisBottom(x)
                 .ticks(10, d3.timeParse('%B')))
             .call(g => g.selectAll('.tick text')
+                .attr('class', 'num')
                 .style('font-size', '14px'));
     // rate axis on left
     const yxr = g => 
@@ -89,6 +90,7 @@ function draw(data) {
             .attr("transform", `translate(${margin.left},0)`)
             .call(d3.axisLeft(y2))
             .call(g => g.selectAll('.tick text')
+                .attr('class', 'num')
                 .style('font-size', '14px'))
             .call(g => g.select('.tick:first-of-type').remove());
     // test axis on right
@@ -97,6 +99,7 @@ function draw(data) {
                 .attr("transform", `translate(${width - margin.right},0)`)
                 .call(d3.axisRight(y))
                 .call(g => g.selectAll('.tick text')
+                    .attr('class', 'num')
                     .style('font-size', '14px'))
                 .call(g => g.select('.tick:first-of-type').remove());
 

@@ -59,7 +59,7 @@ function drawJoy(data) {
 
     // functions
     const area = d3.area()
-        .curve(d3.curveStep)
+        // .curve(d3.curveStep)
         .x((d,i) => x(data.dates[i]))
         .y0(0)
         .y1(d => z(d));
@@ -72,14 +72,16 @@ function drawJoy(data) {
             .call(d3.axisBottom(x))
             .call(g => g.select('.domain').remove())
             .call(g => g.selectAll('.tick text')
-                .style('font-size', 16));
+                .attr('class', 'num')
+                .style('font-size', 14));
     const yx = g =>
         g
             .attr("transform", `translate(${margin.left},0)`)
             .call(d3.axisLeft(y).tickSize(0).tickPadding(4))
             .call(g => g.select(".domain").remove())
             .call(g => g.selectAll('.tick text')
-                .style('font-size', 16)
+                .attr('class', 'num')
+                .style('font-size', 14)
                 .style('font-weight', 'bold'));
 
     // data join

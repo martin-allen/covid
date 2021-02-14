@@ -66,12 +66,12 @@ function drawDaily(data) {
     // DRAWING TOOLS
     // line function
     const line = d3.line()
-        .curve(d3.curveStep)
+        // .curve(d3.curveLinear)
         .x((d,i) => xLine(data.dates[i]))
         .y(d => y(d));
     // area underlying line
     const area = d3.area()
-        .curve(d3.curveStep)
+        // .curve(d3.curveStep)
         .x((d,i) => xLine(data.dates[i]))
         .y0(y(0))
         .y1(d => y(d));
@@ -83,6 +83,7 @@ function drawDaily(data) {
             .call(d3.axisBottom(xLine)
                 .ticks(10, d3.timeParse('%B')))
             .call(g => g.selectAll('.tick text')
+                .attr('class', 'num')
                 .style('font-size', '14px'));
     const yx = g => 
         g
@@ -90,6 +91,7 @@ function drawDaily(data) {
             .call(d3.axisLeft(y))
             // .call(g => g.select('.domain').remove())
             .call(g => g.selectAll('.tick text')
+                .attr('class', 'num')
                 .style('font-size', '14px'))
             // .call(g => g.selectAll('.tick:not(:first-of-type) line')
             //     .attr('x2', width)
