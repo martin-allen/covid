@@ -23,7 +23,7 @@ def send_tweet():
     today, total_vaccd, new_vaccd, total_doses, new_doses = data()
     
     # keys
-    with open('./data/viz/keys.json') as file:
+    with open('./data/viz/files/keys.json') as file:
         paths = json.load(file)
         api = paths['api']
         api_secret = paths['api_secret']

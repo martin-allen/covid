@@ -192,5 +192,5 @@ def make_thumbnail():
     j = joy()
     p = plot(d,j,today,cases)
 
-    p.save('./data/viz/chart.png', scale_factor=2.0)
+    p.save('./data/viz/files/chart.png', scale_factor=2.0)
     print('Thumbnail saved.')

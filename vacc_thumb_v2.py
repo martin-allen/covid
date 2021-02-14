@@ -149,4 +149,4 @@ def make_chart():
     thumb = plot(df, main, new)
     
     thumb.save('./data/viz/vacc_chart.png', scale_factor=2.0)
-    print('Thumbnail saved to ./data/viz/vacc_chart.png!')    
+    print('Thumbnail saved to ./data/viz/files/vacc_chart.png!')    
