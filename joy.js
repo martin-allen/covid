@@ -30,6 +30,7 @@ d3.csv('./data/output/ontario_new.csv')
             series: series
         }
 
+        console.log(dt);
         drawJoy(dt);
 
     })
