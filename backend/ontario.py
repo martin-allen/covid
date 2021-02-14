@@ -24,7 +24,7 @@ def get_data():
     url_content = req.content
     
     # saving unedited file as backup
-    filename = './data/ontario_raw.csv'
+    filename = '../data/ontario_raw.csv'
     csv_file = open(filename, 'wb')
     csv_file.write(url_content)
     csv_file.close()
@@ -53,12 +53,12 @@ def get_data():
                         ascending=[True,False])
     
     # saving cleaned file
-    filename = './data/ontario_data.csv'
+    filename = '../data/ontario_data.csv'
     df.to_csv(filename)
     print(f'Stored clean data at {filename}.')
     
     # renaming units to match StatsCan convention
-    file = pd.read_csv('./data/unit_names.csv')
+    file = pd.read_csv('../data/unit_names.csv')
     names = {x:y for x,y in zip(file['original'],file['rename'])}
     df = df.rename(index=names)
     
@@ -78,7 +78,7 @@ def total(df):
            'Ottawa','Waterloo','Windsor']
     
     # getting total counts for each unit
-    filename = './data/output/ontario_total.csv'
+    filename = '../data/output/ontario_total.csv'
     old_total = pd.read_csv(filename).set_index('date')
     total_counts = []
     for i,unit in enumerate(units_canada):
@@ -97,7 +97,7 @@ def total(df):
     new_total_row.index = [today]
     new_total = pd.concat([new_total_row, old_total])
     new_total.index.name = 'date'
-    new_total.to_csv('./data/output/ontario_total.csv')
+    new_total.to_csv('../data/output/ontario_total.csv')
     
     print(f'Wrote total case record to {filename}.')
     return new_total
@@ -109,7 +109,7 @@ def daily():
     '''
     
     # reading in total cases
-    df = pd.read_csv('./data/output/ontario_total.csv').set_index('date')
+    df = pd.read_csv('../data/output/ontario_total.csv').set_index('date')
     
     # getting today's total, versus yesterday's
     data = pd.concat([df.xs(today), df.xs(yesterday)], axis=1).T
@@ -122,7 +122,7 @@ def daily():
     
     # calculating 7-day averages
     # assembling past seven days of new case counts
-    yesterday_df = pd.read_csv('./data/output/ontario_new.csv').set_index('date')
+    yesterday_df = pd.read_csv('../data/output/ontario_new.csv').set_index('date')
     new_df = pd.concat([cases_today, yesterday_df[unit_names]])
     
     # getting average from that df
@@ -148,7 +148,7 @@ def daily():
     daily_df.index.name = 'date'
     
     # saving to file
-    filename = './data/output/ontario_new.csv'
+    filename = '../data/output/ontario_new.csv'
     daily_df.to_csv(filename)
     print(f'Wrote daily/avg case record to {filename}')
     
@@ -161,7 +161,7 @@ def fourteen():
     '''
     
     # daily cases
-    df = pd.read_csv('./data/output/ontario_new.csv').set_index('date')
+    df = pd.read_csv('../data/output/ontario_new.csv').set_index('date')
     
     # calculating change for each unit
     unit_names = ['London','Durham','Halton',
@@ -182,7 +182,7 @@ def fourteen():
         changes[unit] = c
     
     # adding new data to record
-    filename = './data/output/ontario_change.csv'
+    filename = '../data/output/ontario_change.csv'
     changes_today = pd.DataFrame(changes, index=[today])
     changes_before = pd.read_csv(filename).set_index('date')
     change_df = pd.concat([changes_today, changes_before])
@@ -199,7 +199,7 @@ def demo():
     '''
     
     # getting today's cases in London for all demos
-    df = pd.read_csv('./data/ontario_data.csv').set_index('unit')
+    df = pd.read_csv('../data/ontario_data.csv').set_index('unit')
     london = df.groupby('unit').get_group('Middlesex-London Health Unit')
     new_london_ages = london.age.value_counts()
     new_london_ages.name = today
@@ -214,7 +214,7 @@ def demo():
     new_demo_pcts.columns =  age_categories
     
     # saving age proportions
-    filename = './data/output/london_ages_pct.csv'
+    filename = '../data/output/london_ages_pct.csv'
     demo_pcts = pd.read_csv(filename).set_index('date')
     final_demo_pcts = demo_pcts.append(new_demo_pcts)
     final_demo_pcts.index.name = 'date'

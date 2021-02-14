@@ -2,7 +2,7 @@
 // TABLE NUMBERS
 //
 
-d3.csv('../../output/ontario_change.csv')
+d3.csv('./data/output/ontario_change.csv')
     .then((data) => {
         drawTable(data[0]);
     })
@@ -40,7 +40,7 @@ function drawTable(data) {
 // TABLE LINES
 //
 
-d3.csv('../../output/ontario_new.csv')
+d3.csv('./data/output/ontario_new.csv')
     .then((data) => {
 
         data = data.slice(0,14);

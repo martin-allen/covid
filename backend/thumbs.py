@@ -5,7 +5,7 @@ import altair as alt
 def daily():
 
     # data
-    ldn = pd.read_csv('./data/output/ml_general.csv')[::-1][35:]
+    ldn = pd.read_csv('../data/output/ml_general.csv')[::-1][35:]
     ldn = ldn.rename(columns={'London': 'new', 'London_7': 'avg'})
     
     # getting date and new cases
@@ -73,7 +73,7 @@ def daily():
 def joy():
     
     # data
-    new = pd.read_csv('./data/output/ontario_new.csv', 
+    new = pd.read_csv('../data/output/ontario_new.csv', 
                     usecols = ['London_7', 'Durham_7',
                             'Halton_7', 'Hamilton_7',
                             'Ottawa_7', 'Waterloo_7',
@@ -83,7 +83,7 @@ def joy():
                 'City of Ottawa Health Unit', 'Waterloo Health Unit',
                 'Windsor-Essex County Health Unit']
     # importing population data for adjustment
-    pops = pd.read_csv('./data/pops.csv', usecols = ['unit', '2018']).set_index('unit')
+    pops = pd.read_csv('../data/pops.csv', usecols = ['unit', '2018']).set_index('unit')
     # formatting as required for this viz
     n = pd.DataFrame(new.unstack())
     n = n.reset_index()
@@ -192,5 +192,5 @@ def make_thumbnail():
     j = joy()
     p = plot(d,j,today,cases)
 
-    p.save('./data/viz/files/chart.png', scale_factor=2.0)
+    p.save('../data/viz/files/chart.png', scale_factor=2.0)
     print('Thumbnail saved.')

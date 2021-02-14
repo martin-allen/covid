@@ -143,10 +143,10 @@ def plot(df, main, new):
     return thumb
     
 def make_chart():
-    df = pd.read_csv('./data/output/vaccine.csv')
+    df = pd.read_csv('../data/output/vaccine.csv')
     
     main, new = rows(df)
     thumb = plot(df, main, new)
     
-    thumb.save('./data/viz/vacc_chart.png', scale_factor=2.0)
-    print('Thumbnail saved to ./data/viz/files/vacc_chart.png!')    
+    thumb.save('../data/viz/vacc_chart.png', scale_factor=2.0)
+    print('Thumbnail saved to ../data/viz/files/vacc_chart.png!')    

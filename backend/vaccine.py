@@ -15,7 +15,7 @@ def get_data():
     url_content = req.content
     
     # saving raw file
-    filename = './data/vaccine_raw.csv'
+    filename = '../data/vaccine_raw.csv'
     csv_file = open(filename, 'wb')
     csv_file.write(url_content)
     csv_file.close()
@@ -44,7 +44,7 @@ def get_data():
     df['new_vaccinated'] = df.vaccinated.diff()
     df.new_vaccinated = df.new_vaccinated.replace(np.nan, 0)
     
-    filename = './data/output/vaccine.csv'
+    filename = '../data/output/vaccine.csv'
     df.to_csv(filename)
     print(f'Stored clean data at {filename}.')
     

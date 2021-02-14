@@ -48,7 +48,7 @@ def general(parent):
     print('Data collected.')
     
     # loading in past data for update
-    filename = './data/output/ml_general.csv'
+    filename = '../data/output/ml_general.csv'
     old_data = pd.read_csv(filename).set_index('date')
     yesterday_data = old_data.iloc[0]
     
@@ -77,7 +77,7 @@ def general(parent):
 
 if __name__ == "__main__":
     # urls and XPATHs
-    with open('./data/paths.json') as file:
+    with open('../data/paths.json') as file:
         paths = json.load(file)
 
     today = datetime.today()

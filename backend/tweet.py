@@ -4,7 +4,7 @@ import json
 
 def data():
     # data
-    df = pd.read_csv('./data/output/vaccine.csv')
+    df = pd.read_csv('../data/output/vaccine.csv')
     
     # getting date and new cases
     today = pd.to_datetime(df.iloc[-1].date).strftime('%b %d')
@@ -23,7 +23,7 @@ def send_tweet():
     today, total_vaccd, new_vaccd, total_doses, new_doses = data()
     
     # keys
-    with open('./data/viz/files/keys.json') as file:
+    with open('../data/viz/files/keys.json') as file:
         paths = json.load(file)
         api = paths['api']
         api_secret = paths['api_secret']
@@ -45,7 +45,7 @@ def send_tweet():
     api = tw.API(auth)
         
     # creating media object
-    media = api.media_upload('./data/viz/vacc_chart.png')
+    media = api.media_upload('../data/viz/vacc_chart.png')
     message = f'''
         ONTARIO VACCINATIONS ON {today.upper()}: 
         \n\n \U0001F4C8 {new_vaccd:,} more people vaccinated
