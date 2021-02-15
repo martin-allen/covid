@@ -32,8 +32,7 @@ d3.csv('./data/output/ml_test.csv')
             dates: dates,
             tests: tests
         }
-
-        console.log(dt);
+        
         draw(dt);
 
     })

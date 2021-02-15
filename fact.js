@@ -47,7 +47,7 @@ d3.csv('./data/output/ml_general.csv')
         let dates = [];
         const parse = d3.timeParse('%Y-%m-%d');
 
-        for (i = 0; i < 30; i++) {
+        for (i = 0; i < 31; i++) {
             series.push(+data[i].new);
             let date = parse(data[i].date);
             dates.push(date);
@@ -57,8 +57,6 @@ d3.csv('./data/output/ml_general.csv')
             dates: dates,
             series: series
         }
-
-        console.log(dt);
 
         drawFact({
             series: series.reverse(),

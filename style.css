@@ -12,6 +12,18 @@ BLUE PALETTE:
 
 /* GENERAL */
 
+#page-title {
+
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 100px;
+    font-weight: bold;
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
 #viz {
     display: flex;
     flex-direction: column;
@@ -51,18 +63,6 @@ h1 {
  
 #fact-hed {
     border-bottom: 1px solid black;
-}
-
-#fact-hed h1 {
-
-    font-family: 'Roboto', sans-serif;
-
-    font-size: 100px;
-    font-weight: bold;
-
-    text-align: left;
-    padding: 0px;
-    margin: 0px;
 }
 
 #fact-hed p {
@@ -143,11 +143,26 @@ h1 {
     font-size: 18px;
 }
 
-/**/
-/* TESTING */
-/**/
+/* DEMO */
 
-/* TESTS */
+#demo {
+    width: 75%;
+    margin: auto;
+}
+
+#demo h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#demo p {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* TESTING */
+
 #testing {
     width: 75%;
     margin: auto;
