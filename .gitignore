@@ -1,5 +1,5 @@
 /.ipynb_checkpoints
-/Data update.ipynb
+/backend/Data update.ipynb
 /__pycache__
 data/ontario_raw.csv
 data/ontario_data.csv

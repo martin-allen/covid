@@ -3,9 +3,10 @@
 d3.csv('./data/output/ml_summary.csv')
     .then(data => {
 
+        const parse = d3.timeParse('%Y-%m-%d');
         const row = data[0];
         const dt = {
-            date: new Date(row.date),
+            date: parse(row.date),
             new: row.new,
             total: row.total,
             deaths: row.deaths,
@@ -97,8 +98,9 @@ function drawFact(data) {
                 .ticks(5, d3.timeParse('%b. %d')))
             .call(g => g.selectAll('.tick text')
                 .attr('class', 'num')
-                .style('font-size', '8px'))
-                .call(g => g.selectAll('.tick line')
+                .style('font-size', '8px')
+                .attr('font-weight', 'bold'))
+            .call(g => g.selectAll('.tick line')
                 .attr('display', 'none'))
             .call(g => g.selectAll(
                 '.tick:not(:first-of-type):not(:last-of-type) text'
@@ -129,7 +131,7 @@ function drawFact(data) {
         .datum(data.series)
             .attr('fill', 'none')
             .attr('stroke', '#22456B')
-            .attr('stroke-width', 2)
+            .attr('stroke-width', 2.5)
             .attr('d', l)
             .attr('marker-start', 'url(#fact-dot)')
             .attr('marker-end', 'url(#fact-dot)')

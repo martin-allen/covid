@@ -23,7 +23,30 @@
         <!-- FACTBOX -->
 
         <div id='fact'>
-            <h1>COVID in London, Ont.</h1>
+            <div id = 'fact-hed'>
+                <h1>COVID-19 in London, Ont.</h1>
+                <p>
+                    This is an independent daily dashboard of the latest coronavirus 
+                    information about the London area from the 
+                    <a href="https://healthunit.com/novel-coronavirus">
+                        Middlesex-London Health Unit 
+                    </a>
+                    and the 
+                    <a href="https://data.ontario.ca/dataset/status-of-covid-19-cases-in-ontario">
+                        Ontario government</a>.
+                    It is updated daily around noon, when each day's data 
+                    is released. 
+                </p>
+                <p>
+                    To follow Ontario's vaccination process,
+                    you can follow 
+                    <a href="https://twitter.com/ontvaccine">
+                        this Twitter bot
+                    </a> run by this dashboard's 
+                    author. You can find contact info and citations in the page 
+                    footer.
+                </p>
+            </div>
             <div id='fact-facts'>
                 <div id='fact-date'>
                     <tspan></tspan>
@@ -52,17 +75,20 @@
             </div>
         </div>
 
+        <br>
+        <br>
+
         <!-- NEW DAILY CASES -->
         <div id='daily'>
             <h1>New daily cases</h1>
-            <p>
+            <p class = 'desc'>
                 Cases have risen steadily since the fall, 
                 and exploded in the winter despite controlling 
                 measures. This chart shows each day's 
-                <tspan style='color:#19334F; font-weight:bold'>
+                <tspan style='color:#8398AE; font-weight:bold'>
                     new cases</tspan>, 
                 along with the 
-                <tspan style='color:#8398AE; font-weight:bold'>
+                <tspan style='color:#19334F; font-weight:bold'>
                     rolling average
                 </tspan> 
                 of the previous 
@@ -72,12 +98,12 @@
             </div>
         </div>
 
-        <br><br><br>
+        <br><br>
 
         <!-- TESTING -->
         <div id='testing'>
             <h1>Test positivty and tests completed</h1>
-            <p>
+            <p class = 'desc'>
                 Weekly
                 <tspan style='color:#85333D; font-weight:bold'>
                     test positivity
@@ -155,23 +181,40 @@
 
             <div id='joy'>
                 <h1>London and its peers</h1>
-                <p>
+                <p class = 'desc'>
                     These are six other health units in Ontario
-                    grouped with London by Stats Canada due to their
+                    <a href="https://www150.statcan.gc.ca/n1/pub/82-402-x/2018001/hrpg-rsgh-eng.htm">
+                        grouped with London by Stats Canada
+                    </a>  
+                    due to their
                     demographic similarity. This section uses the 
                     Ontario-wide data for consistency, so figures will 
                     differ marginally from data from the MLHU.
                 </p>
-                <br><br>
-                <h2>Average Daily Cases</h2>
-                <p>
+                <p class = 'desc'>
                     London and all its peers have followed
                     the provincial waves, though some units, like 
-                    Ottawa and Windsor, had isolated spikes.
+                    Ottawa and Windsor, had isolated spikes. This chart 
+                    shows the shape of each unit's pandemic; the data 
+                    depicted is the rolling average of new cases.
                 </p>
                 <div id='joy-chart'>
                 </div>
             </div>
+
+            <br><br><hr>
+            <p id='footer'>
+                This dashboard is run independently by 
+                <a href="https://twitter.com/__martinallen__">
+                    Martin Allen</a>.
+                The data and code that run this repository are available 
+                on GitHub 
+                <a href="https://github.com/martin-allen/covid">
+                    here</a>, 
+                including a detailed README. You contact me 
+                <a href="mailto:martin.tr.allen@gmail.com">
+                    via email</a>. 
+            </p>
         </div>
 
 </body>
