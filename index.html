@@ -8,6 +8,7 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="fact.js"></script>
     <script src="daily.js"></script>
+    <!-- <script src="demo.js"></script> -->
     <script src="tests.js"></script>
     <script src="table.js"></script>
     <script src="joy.js"></script>
@@ -18,13 +19,13 @@
 </head>
 <body>
     
+    <h1 id='page-title'>COVID in London</h1>
     <div id='viz'>
 
         <!-- FACTBOX -->
 
         <div id='fact'>
             <div id = 'fact-hed'>
-                <h1>COVID-19 in London, Ont.</h1>
                 <p>
                     This is an independent daily dashboard of the latest coronavirus 
                     information about the London area from the 
@@ -75,8 +76,7 @@
             </div>
         </div>
 
-        <br>
-        <br>
+        <br><br>
 
         <!-- NEW DAILY CASES -->
         <div id='daily'>
@@ -100,6 +100,16 @@
 
         <br><br>
 
+        <!-- DEMOGRAPHICS
+        <div id='demo'>
+            <h1>Cases by age group</h1>
+            <p>
+                While older people were most cases in the spring,
+                young people have been the bulk of cases in London since.
+            </p>
+            <div id='demo-chart'></div>
+        </div> -->
+
         <!-- TESTING -->
         <div id='testing'>
             <h1>Test positivty and tests completed</h1>
@@ -113,7 +123,8 @@
                     tests
                 </tspan> 
                 were scarce. But in the peak of the 
-                pandemic this winter, it rose steadily again. 
+                pandemic this winter, with testing at its peak, 
+                it rose steadily again. 
             </p>
             <div id='testing-chart'>
             </div>
@@ -216,5 +227,6 @@
                     via email</a>. 
             </p>
         </div>
+    </div>
 
 </body>

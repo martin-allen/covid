@@ -199,28 +199,36 @@ def demo():
     '''
     
     # getting today's cases in London for all demos
-    df = pd.read_csv('../data/ontario_data.csv').set_index('unit')
+    df = pd.read_csv('./data/ontario_data.csv').set_index('unit')
     london = df.groupby('unit').get_group('Middlesex-London Health Unit')
-    new_london_ages = london.age.value_counts()
-    new_london_ages.name = today
+    london = london.sort_values(by=['reported'])
+    timespan = [x.strftime('%Y-%m-%d') for x in pd.date_range(start = '2020-01-24', end = today)]
+    london = london[london.reported.isin(timespan)]
+    new_london_ages = pd.DataFrame(london.age.value_counts()).T
+    new_london_ages.index = [today]
+    
+    # saving total age data
+    filename = './data/output/london_ages.csv'
+    london_ages = pd.read_csv(filename).set_index('date')
+    final_london_ages = pd.concat([london_ages, new_london_ages])
+    final_london_ages.index.name = 'date'
+    final_london_ages.to_csv(filename)
     
     # getting age proportions
-    total = new_london_ages.sum()
-    age_categories = ['<20','20s','30s','40s','50s','60s','70s','80s','90s']
-    age_data = new_london_ages[age_categories]
+    total = new_london_ages.T.sum()[0]
+    age_categories = ['<20','20s','30s','40s','50s','60s','70s','80s','90+']
+    age_data = pd.Series(new_london_ages[age_categories].T[today]).tolist()
     d = [x / total for x in age_data]
     new_demo_pcts = pd.DataFrame(d).T
     new_demo_pcts.index = [today]
     new_demo_pcts.columns =  age_categories
     
     # saving age proportions
-    filename = '../data/output/london_ages_pct.csv'
+    filename = './data/output/london_ages_pct.csv'
     demo_pcts = pd.read_csv(filename).set_index('date')
     final_demo_pcts = demo_pcts.append(new_demo_pcts)
     final_demo_pcts.index.name = 'date'
     final_demo_pcts.to_csv(filename)
-    
-    print(f'Wrote demo % record to {filename}')
     
 
 if __name__ == "__main__":
