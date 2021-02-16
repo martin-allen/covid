@@ -31,7 +31,7 @@ def get_data():
     print(f'Downloaded data; stored raw at {filename}')
     
     # cleaning file
-    df = pd.read_csv('./data/ontario_raw.csv')
+    df = pd.read_csv('../data/ontario_raw.csv')
     df = df.drop(['Row_ID', 'Reporting_PHU_City',
                 'Reporting_PHU_Address',
                 'Reporting_PHU_Postal_Code', 
