@@ -92,18 +92,7 @@ function drawFact(data) {
     const xx = g =>
         g
             .attr("transform", `translate(0,${height - margin.bottom})`)
-            .call(d3.axisBottom(x)
-                .ticks(5, d3.timeParse('%b. %d')))
-            .call(g => g.selectAll('.tick text')
-                .attr('class', 'num')
-                .style('font-size', '8px')
-                .attr('font-weight', 'bold'))
-            .call(g => g.selectAll('.tick line')
-                .attr('display', 'none'))
-            .call(g => g.selectAll(
-                '.tick:not(:first-of-type):not(:last-of-type) text'
-            )
-                .attr('display', 'none'))
+            .call(d3.axisBottom(x).ticks(0))
             .call(g => g.select('.domain')
                 .attr('stroke-width', 0.7));
     // line dots
@@ -133,5 +122,10 @@ function drawFact(data) {
             .attr('d', l)
             .attr('marker-start', 'url(#fact-dot)')
             .attr('marker-end', 'url(#fact-dot)')
+    svg.append('text')
+        .attr('transform', `translate(${67}, ${height - 15})`)
+        .attr('font-size', 9)
+        .attr('class', 'num')
+        .text('Last 30 Days')
 
 }
