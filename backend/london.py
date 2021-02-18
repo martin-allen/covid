@@ -42,8 +42,7 @@ def general(parent):
     new_cases = get_stat(paths['general']['new_cases'])
     total_cases = get_stat(paths['general']['total'])
     total_deaths = get_stat(paths['general']['total_deaths'])
-    recovered = get_stat(paths['general']['total_recovered'])
-    active = total_cases - (total_deaths + recovered)
+    active = get_stat(paths['general']['active'])
     
     print('Data collected.')
     
