@@ -154,24 +154,28 @@ def daily():
     
     return daily_df
 
-def fourteen():
+def summary():
     '''
-    Calculates daily, rolling 14-day change in daily
-    new cases in London + its peers.
+    Calculates 14-day change, cases per 10K and deaths per 10K,
+    for London and its peers.
     '''
     
+    #
+    # CHANGE
+    # 
+    
     # daily cases
-    df = pd.read_csv('../data/output/ontario_new.csv').set_index('date')
+    ddf = pd.read_csv('../data/output/ontario_new.csv').set_index('date')
     
     # calculating change for each unit
     unit_names = ['London','Durham','Halton',
                   'Hamilton','Ottawa','Waterloo',
                   'Windsor']
-    
-    changes = {}
+    # collecting data
+    changes = []
     for unit in unit_names:
         # getting 14-day section
-        s = df[unit][::-1]
+        s = ddf[unit][::-1]
         t = s[len(s)-14:]
         # getting total of each 7-day half
         p, q = t[:7], t[7:]
@@ -179,18 +183,71 @@ def fourteen():
         second = sum(p)
         # calculating changes
         c = (first / second * 100) - 100
-        changes[unit] = c
+        changes.append(c)
+        
+    # pops and corresponding entry names
+    pops = pd.read_csv('../data/pops.csv').set_index('unit')
+    name_dict_ca = {
+        'London': 'Middlesex-London Health Unit',
+        'Durham': 'Durham Regional Health Unit',
+        'Halton': 'Halton Regional Health Unit',
+        'Hamilton': 'City of Hamilton Health Unit',
+        'Ottawa': 'City of Ottawa Health Unit',
+        'Waterloo': 'Waterloo Health Unit',
+        'Windsor': 'Windsor-Essex County Health Unit'
+    }   
+    name_dict_on_to_ca = {
+        'Middlesex-London Health Unit': 'Middlesex-London Health Unit',
+        'Durham Region Health Department': 'Durham Regional Health Unit',
+        'Halton Region Health Department': 'Halton Regional Health Unit',
+        'Hamilton Public Health Services': 'City of Hamilton Health Unit',
+        'Ottawa Public Health': 'City of Ottawa Health Unit',
+        "Region of Waterloo, Public Health": 'Waterloo Health Unit',
+        'Windsor-Essex County Health Unit': 'Windsor-Essex County Health Unit'
+    }
     
-    # adding new data to record
-    filename = '../data/output/ontario_change.csv'
-    changes_today = pd.DataFrame(changes, index=[today])
-    changes_before = pd.read_csv(filename).set_index('date')
-    change_df = pd.concat([changes_today, changes_before])
-    change_df.index.name = 'date'
-    change_df.to_csv(filename)   
+    #
+    # CASES
+    #
     
-    print(f'Wrote 14-day change record to file at {filename}.')
-    return change_df
+    # total cases
+    tdf = pd.read_csv('../data/output/ontario_total.csv').set_index('date')
+    total = tdf.iloc[0].tolist()
+    
+    # getting data
+    cases = []
+    for i,c in enumerate(total):
+        unit = list(name_dict_ca.keys())[i]
+        unit = name_dict_ca[unit] 
+        pop = pops.loc[unit]['2018']
+        pc = (c/pop) * 10000
+        cases.append(round(pc,1))
+        
+    # 
+    # DEATHS
+    #
+    
+    ddf = pd.read_csv('../data/ontario_raw.csv').set_index('Row_ID')
+    ddf = ddf[ddf['Reporting_PHU'].isin(name_dict_on_to_ca.keys())][['Reporting_PHU', 'Outcome1']]
+    deaths = []
+    for region in ddf.Reporting_PHU.drop_duplicates():
+        grp = ddf.groupby('Reporting_PHU').get_group(region)
+        d = len(grp['Outcome1'][grp['Outcome1'] == 'Fatal'])
+        name = name_dict_on_to_ca[region]
+        pop = pops.loc[name]['2018']
+        p_deaths = (d/pop) * 10000
+        deaths.append(round(p_deaths,2))
+        
+    
+    summary = pd.DataFrame(data = [
+        changes,
+        cases,
+        deaths
+    ], columns = name_dict_ca.keys(),
+        index = ['change', 'cases', 'deaths']).T
+    
+    summary.index.name = 'unit'
+    summary.to_csv('../data/output/ontario_summary.csv')
 
 def demo():
     '''
@@ -239,7 +296,7 @@ if __name__ == "__main__":
     today = today.strftime('%Y-%m-%d')
     yesterday = yesterday.strftime('%Y-%m-%d')
     
-    df = get_data()
-    total_data = total(df)
-    daily_data = daily()
-    fteen = fourteen()
+    # df = get_data()
+    # total_data = total(df)
+    # daily_data = daily()
+    summary = summary()
