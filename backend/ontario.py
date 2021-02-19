@@ -296,7 +296,7 @@ if __name__ == "__main__":
     today = today.strftime('%Y-%m-%d')
     yesterday = yesterday.strftime('%Y-%m-%d')
     
-    # df = get_data()
-    # total_data = total(df)
-    # daily_data = daily()
+    df = get_data()
+    total_data = total(df)
+    daily_data = daily()
     summary = summary()
