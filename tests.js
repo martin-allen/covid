@@ -41,7 +41,7 @@ function draw(data) {
 
     const width = 1000;
     const height = 600;
-    const margin = {top: 40, right: 55, bottom: 50, left: 55};
+    const margin = {top: 40, right: 60, bottom: 50, left: 55};
 
     const svg = d3.select('#testing')
         .select('#testing-chart')
@@ -111,7 +111,7 @@ function draw(data) {
 
     const tests = svg.append('path')
             .attr('id', 'test-line')
-        .datum(data.tests)
+        .datum(data.tests)  
         // line: #08306B
         // purple: #E0DEFF
         // red: #E05F3C
@@ -120,18 +120,23 @@ function draw(data) {
             .attr('stroke', d3.schemePurples[9][8])
             .attr('d', line);
 
-    const rateArea = svg.append('path')
+    const rate = svg.append('path')
             .attr('id', 'rate-area')
         .datum(data.ml)
             .attr('fill', '#FA5332')
-            .attr('stroke', 'none')
-            .attr('opacity', 0.8)
-            .attr('d', area);
-    const rateLine = svg.append('path')
-            .attr('id', 'rate-line')
-        .datum(data.ml)
-            .attr('fill', 'none')
             .attr('stroke', d3.schemeReds[9][8])
             .attr('stroke-width', 2.5)
-            .attr('d', area.lineY1());
+            .attr('opacity', 0.8)
+            .attr('d', area);
+
+    // tests
+    //     .datum(data.ml)
+    //         .transition()
+    //             .duration(2000)
+    //             .ease(d3.easeQuadIn)
+    //                 .attr('fill', '#FA5332')
+    //                 .attr('stroke', d3.schemeReds[9][8])
+    //                 .attr('stroke-width', 2.5)
+    //                 .attr('d', area);
+
 }
