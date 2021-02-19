@@ -9,7 +9,7 @@
         "new_cases": ".//visual-container-modern[25]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
         "new_deaths": ".//visual-container-modern[18]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
         "total_deaths": ".//visual-container-modern[23]/transform/div/div[3]/div/visual-modern/div/div/div/p/span",
-        "total_recovered": ".//visual-container-modern[24]/transform/div/div[3]/div/visual-modern/div/div/div/p/span"
+        "total_active": ".//visual-container-modern[24]/transform/div/div[3]/div/visual-modern/div/div/div/p/span"
     },
 
     "student": {
