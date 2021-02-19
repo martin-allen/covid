@@ -98,7 +98,13 @@ function drawJoy(data) {
             .attr('id', d => `joy-${d.name}`);
 
     rows.append('path')
-        .attr('fill', d3.schemeBlues[9][2])
+        .attr('fill', d => {
+            if (d.name == 'London') {
+                return d3.schemeBlues[9][1];
+            } else {
+                return d3.schemeBlues[9][1]; 
+            }
+        })
         .attr('d', d => area(d.values));
     rows.append("path")
         .attr("fill", "none")

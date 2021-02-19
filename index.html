@@ -8,9 +8,8 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="fact.js"></script>
     <script src="daily.js"></script>
-    <!-- <script src="demo.js"></script> -->
     <script src="tests.js"></script>
-    <script src="table.js"></script>
+    <script src="peers.js"></script>
     <script src="joy.js"></script>
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -129,70 +128,14 @@
             <div id='testing-chart'>
             </div>
         </div>
+
+        <br><br>
+
         <!-- PEERS -->
 
         <div id='peers'>
-                <!-- <div id='peer_table'>
-                    <table>
-                        <tr id='table_hed'>
-                            <th id='table_region'></th>
-                            <th id='table_change'>LAST TWO WEEKS</th>
-                        </tr>
-                        <tr id='table_London'>
-                            <td class='table_region'>London</td>
-                            <td class='table_change'>
-                                <div class='grid-table-num'></div>
-                                <div class='grid-table-line'></div>
-                            </td>
-                        </tr>
-                        <tr id='table_Durham'>
-                            <td class='table_region'>Durham</td>
-                            <td class='table_change'>
-                                <div class='grid-table-num'></div>
-                                <div class='grid-table-line'></div>
-                            </td>
-                        </tr>
-                        <tr id='table_Halton'>
-                            <td class='table_region'>Halton</td>
-                            <td class='table_change'>
-                                <div class='grid-table-num'></div>
-                                <div class='grid-table-line'></div>
-                            </td>
-                        </tr>
-                        <tr id='table_Hamilton'>
-                            <td class='table_region'>Hamilton</td>
-                            <td class='table_change'>
-                                <div class='grid-table-num'></div>
-                                <div class='grid-table-line'></div>
-                            </td>
-                        </tr>
-                        <tr id='table_Ottawa'>
-                            <td class='table_region'>Ottawa</td>
-                            <td class='table_change'>
-                                <div class='grid-table-num'></div>
-                                <div class='grid-table-line'></div>
-                            </td>
-                        </tr>
-                        <tr id='table_Waterloo'>
-                            <td class='table_region'>Waterloo</td>
-                            <td class='table_change'>
-                                <div class='grid-table-num'></div>
-                                <div class='grid-table-line'></div>
-                            </td>
-                        </tr>
-                        <tr id='table_Windsor'>
-                            <td class='table_region'>Windsor</td>
-                            <td class='table_change'>
-                                <div class='grid-table-num'></div>
-                                <div class='grid-table-line'></div>
-                            </td>
-                        </tr>
-                    </table>
-            </div> -->
-
-            <div id='joy'>
-                <h1>London and its peers</h1>
-                <p class = 'desc'>
+            <h1>London and its peers</h1>
+            <p class = 'desc'>
                     These are six other health units in Ontario
                     <a href="https://www150.statcan.gc.ca/n1/pub/82-402-x/2018001/hrpg-rsgh-eng.htm">
                         grouped with London by Stats Canada
@@ -201,20 +144,57 @@
                     demographic similarity. This section uses the 
                     Ontario-wide data for consistency, so figures will 
                     differ marginally from data from the MLHU.
-                </p>
-                <p class = 'desc'>
+            </p>
+            <nav role='navigation'>
+                <a href="#l" id='peer-London'>LONDON</a>
+                <a href="#wi" id='peer-Windsor'>WINDSOR</a>
+                <a href="#wa" id='peer-Waterloo'>WATERLOO</a>
+                <a href="#o" id='peer-Ottawa'>OTTAWA</a>
+                <a href="#ham" id='peer-Hamilton'>HAMILTON</a>
+                <a href="#hal" id='peer-Halton'>HALTON</a>
+                <a href="#d" id='peer-Durham'>DURHAM</a>
+            </nav>
+            <div id='peer-viz'>
+                <div id='peer-facts'>
+                    <div id='peer-change'>
+                        <p class='fact-num num'></p>
+                        <p class='fact-desc'>14-day change</p>
+                    </div>
+                    <div id='peer-total'>
+                        <p class='fact-num num'></p>
+                        <p class='fact-desc'>cases per 10K</p>
+                    </div>
+                    <div id='peer-deaths'>
+                        <p class='fact-num num'></p>
+                        <p class='fact-desc'>deaths per 10K</p>                        
+                    </div>
+                </div>
+                <div id='peer-chart'>
+                </div>
+            </div>
+            <p class='desc'>
+                The <tspan style='color:#cb181d;font-weight:bold'>
+                    14-day change
+                </tspan> represents the difference in total cases 
+                between the past seven days and the seven days before that. 
+                It indicates the short-term trend of each health unit. 
+            </p>
+        </div>
+
+        <div id='joy'>
+            <p class = 'desc'>
                     London and all its peers have followed
                     the provincial waves, though some units, like 
                     Ottawa and Windsor, had isolated spikes. This chart 
                     shows the shape of each unit's pandemic; the data 
                     depicted is the rolling average of new cases.
-                </p>
-                <div id='joy-chart'>
-                </div>
+            </p>
+            <div id='joy-chart'>
             </div>
+        </div>
 
             <br><br><hr>
-            <p id='footer'>
+        <p id='footer'>
                 This dashboard is run independently by 
                 <a href="https://twitter.com/__martinallen__">
                     Martin Allen</a>.
@@ -225,7 +205,7 @@
                 including a detailed README. You contact me 
                 <a href="mailto:martin.tr.allen@gmail.com">
                     via email</a>. 
-            </p>
+        </p>
         </div>
     </div>
 
