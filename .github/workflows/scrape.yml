@@ -22,8 +22,8 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Scrape vaccine
-      run: python vaccine.py
+      run: python /backend/vaccine.py
     - name: Scrape Ontario
-      run: python ontario.py
+      run: python /backend/ontario.py
     - name: Scrape London
-      run: python london.py
+      run: python /backend/london.py
