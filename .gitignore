@@ -1,10 +1,11 @@
 /.ipynb_checkpoints
 /backend/Data update.ipynb
 /__pycache__
-/data/ontario_raw.csv
-/data/ontario_data.csv
+data/ontario_raw.csv
+data/ontario_data.csv
 /data/viz/files/keys.json
 /data/viz/files/creds.json
 /data/viz/files/update.py
 /.htaccess
 /update.sh
+/.github/workflows/
