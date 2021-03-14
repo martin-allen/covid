@@ -2,7 +2,7 @@ name: Scraping
 
 on:
   schedule:
-  - cron: "02 17 * * *" # EST is UTC-5
+  - cron: "05 21 * * *" # EST is UTC-5
   push:
     branches: [ $default-branch ]
   pull_request:
@@ -12,9 +12,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./backend
-
+    defaults: # setting to python dir
+      run:
+        working-directory: ./backend
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
