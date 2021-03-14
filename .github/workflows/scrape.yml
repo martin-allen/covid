@@ -12,6 +12,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./backend
 
     steps:
     - uses: actions/checkout@v2
@@ -20,10 +22,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f ../requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Scrape vaccine
-      run: python /backend/vaccine.py
+      run: python vaccine.py
     - name: Scrape Ontario
-      run: python /backend/ontario.py
+      run: python ontario.py
     - name: Scrape London
-      run: python /backend/london.py
+      run: python london.py
