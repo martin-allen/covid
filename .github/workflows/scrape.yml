@@ -2,7 +2,7 @@ name: Scraping
 
 on:
   schedule:
-  - cron: "05 21 * * *" # EST is UTC-5
+  - cron: "02 17 * * *" # EST is UTC-5
   push:
     branches: [ $default-branch ]
   pull_request:
