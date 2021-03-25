@@ -226,9 +226,8 @@ h1 {
     /* GENERAL */
 
     #viz {
-        width: 90%;
-        margin: 0;
-        padding: 0;
+        max-width: 600px;
+        margin: auto;
     }
 
     #page-title {
@@ -282,5 +281,56 @@ h1 {
     
     .fact-desc {
         font-size: 12px;
+    }
+
+    /* FIXING SVGS */
+    #daily, #testing, #peers, #joy {
+        width: 95%;
+    }
+
+    /* PEERS */
+    
+    #peers nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    
+    #peers nav a {
+        text-decoration: none;
+        color: black;
+    
+        padding: 5px;
+        margin: 0px;
+    
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    #peer-viz {
+        display: flex; 
+        flex-direction: column;
+    }
+    
+    #peer-facts {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+    }
+    
+    #peer-facts .fact-num {
+        font-size: 25px;
+    }
+    
+    #peer-facts div {
+        padding: 20px 10px 20px 10px;
+        text-align: center;
+    }
+    
+    #peer-chart {
+        width: 90%;
+        margin-top: 0;
     }
 }
