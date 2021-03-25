@@ -231,9 +231,7 @@ h1 {
     }
 
     #page-title {
-        font-size: 30px;
-        text-align: left;
-        margin-left: 45px;
+        font-size: 50px;
     }
 
     .desc {
@@ -251,7 +249,7 @@ h1 {
     #fact {
         display: flex;
         flex-direction: column;
-        width: 75%;
+        width: 90%;
         margin: auto;
         padding: 0px;
     }
